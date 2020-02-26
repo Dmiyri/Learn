@@ -1,0 +1,14 @@
+.App {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.skills{
+    width: 500px;
+    border: 1px solid black;
+    margin: 5px;
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap
+}

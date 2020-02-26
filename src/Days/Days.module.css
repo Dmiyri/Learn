@@ -1,0 +1,22 @@
+.day{
+  margin-left: 5px;
+  padding: 5px;
+  border: 1px solid black;
+  width: 82px;
+}
+
+.green{
+  background-color: green;
+}
+.yellow{
+  background-color: yellow;
+}
+.red{
+  background-color: red;
+}
+.purple{
+  background-color: purple;
+}
+.cornflowerblue{
+  background-color: cornflowerblue;
+}
