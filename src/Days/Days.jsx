@@ -1,7 +1,6 @@
 import React from 'react';
 import s from './Days.module.css';
 
-
 class Days extends React.Component {
 
     render = () => {
@@ -23,7 +22,6 @@ class Days extends React.Component {
                 color = 'cornflowerblue';
                 break;
         }
-
 
         return (
             <div className={s.day}>

@@ -1,26 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import s from './App.module.css';
+import Tarasiuk from "./Name/Tarasiuk";
+import Hello from "./Hello/Hello";
+import MySkill from "./MySkills/MySkill";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends React.Component {
+
+    state = {
+        skills: ["Ответственный", "Исполнительный", "Коммуникабельный"],
+        count: 0,
+    }
+
+    onHelloClick = (newText) => {
+        alert(`Hello ${newText}`);
+        this.setState({count: this.state.count + 1})
+    };
+
+    render() {
+        let skillsMe = this.state.skills.map(i => <MySkill skill={i}/>);
+        return (
+            <div className={s.app}>
+                <Tarasiuk/>
+                {/*<Days day='Friday'/>*/}
+                <div className={s.skills}>
+                    {skillsMe}
+                </div>
+                <Hello count={this.state.count} onHelloClick={this.onHelloClick}/>
+            </div>
+        );
+    }
 }
 
 export default App;

@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import s from './MySkill.module.css';
 
 class Skills extends React.Component {
