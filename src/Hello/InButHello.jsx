@@ -6,7 +6,6 @@ class InButHello extends React.Component {
         super(props);
         this.newHelloText = React.createRef();
     }
-
     helloClick = () => {
         let newText = this.newHelloText.current.value;
         this.newHelloText.current.value = '';

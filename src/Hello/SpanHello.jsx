@@ -5,7 +5,9 @@ class SpanHello extends React.Component {
     render = () => {
         return (
             <div>
-                <span style={{width: '15px', margin: '5px'}}>{this.props.count} </span>
+                <span style={{width: '15px', margin: '5px'}}>
+                    {this.props.count}
+                </span>
             </div>
         );
     }

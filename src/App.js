@@ -19,10 +19,10 @@ class App extends React.Component {
 
     render() {
         let skillsMe = this.state.skills.map(i => <MySkill skill={i}/>);
+
         return (
             <div className={s.app}>
                 <Tarasiuk/>
-                {/*<Days day='Friday'/>*/}
                 <div className={s.skills}>
                     {skillsMe}
                 </div>
