@@ -8,13 +8,15 @@ import MySkill from "./MySkills/MySkill";
 class App extends React.Component {
 
     state = {
-        skills: ["Ответственный", "Исполнительный", "Коммуникабельный"],
-        count: 0,
+        skills: ["Пунктуальный", "Исполнительный", "Коммуникабельный"],
+        names: [],
     }
 
     onHelloClick = (newText) => {
         alert(`Hello ${newText}`);
-        this.setState({count: this.state.count + 1})
+        let newFriend = [...this.state.names, newText];
+
+        this.setState({count: this.state.count + 1, names: newFriend})
     };
 
     render() {
@@ -22,11 +24,19 @@ class App extends React.Component {
 
         return (
             <div className={s.app}>
-                <Tarasiuk/>
-                <div className={s.skills}>
-                    {skillsMe}
+                <h2>Спасибо, что заглянули ко мне на страницу</h2>
+                <div className={s.wrapper}>
+                    <div>
+                        <Tarasiuk/>
+                        <div className={s.skills}>
+                            <div>Если коротко, то меня можно охарактеризовать:</div>
+                            <div className={s.skill}>{skillsMe}</div>
+                        </div>
+                    </div>
+                    <div>
+                        <Hello state={this.state} onHelloClick={this.onHelloClick}/>
+                    </div>
                 </div>
-                <Hello count={this.state.count} onHelloClick={this.onHelloClick}/>
             </div>
         );
     }

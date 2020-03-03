@@ -15,7 +15,7 @@ class InButHello extends React.Component {
     render = () => {
         return (
             <div>
-                <input ref={this.newHelloText}/>
+                <input ref={this.newHelloText} placeholder="Как тебя зовут?"/>
                 <button style={{marginLeft: '5px', padding: '5px'}} onClick={this.helloClick}>hello</button>
             </div>
         );
