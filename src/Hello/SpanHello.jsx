@@ -1,7 +1,6 @@
 import React from 'react';
 
 class SpanHello extends React.Component {
-
     render = () => {
         return (
             <div>

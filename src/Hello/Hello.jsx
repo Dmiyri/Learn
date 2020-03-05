@@ -7,6 +7,7 @@ import Friend from "../Friends/Friend";
 class Hello extends React.Component {
 
     render = () => {
+
         let friendMe = this.props.state.names.map(t=><Friend friend={t}/>)
 
         return (

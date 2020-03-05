@@ -2,6 +2,7 @@ import React from 'react';
 import s from './Days.module.css';
 
 class Days extends React.Component {
+
     render = () => {
         let color;
         switch (this.props.day) {
