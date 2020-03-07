@@ -1,6 +1,6 @@
 import React from 'react';
 import SpanHello from "./SpanHello";
-import InButHello from "./InButHello";
+import InButHello from "./Input/InButHello";
 import s from './Hello.module.css'
 import Friend from "../Friends/Friend";
 

@@ -1,0 +1,22 @@
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.days {
+    margin: 5px;
+    padding: 5px;
+   color: white;
+}
+
+.days.active {
+    margin: 5px;
+    padding: 5px;
+color:gold
+}
+
+.wrapper {
+    display: flex;
+    margin: 5px;
+    padding: 5px;
+}
