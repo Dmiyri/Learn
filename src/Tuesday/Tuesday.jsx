@@ -1,4 +1,5 @@
 import React from 'react';
+import ToDoList from "./ToDoList";
 
 class Tuesday extends React.Component {
 
@@ -6,7 +7,7 @@ class Tuesday extends React.Component {
 
         return (
             <div className={''}>
-                Tuesday
+               <ToDoList/>
             </div>
         );
     }
