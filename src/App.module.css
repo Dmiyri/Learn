@@ -7,3 +7,8 @@
     height: 100vh;
 }
 
+.loading{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

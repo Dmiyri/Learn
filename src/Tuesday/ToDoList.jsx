@@ -16,7 +16,7 @@ class ToDoList extends React.Component {
     }
 
     componentDidMount() {
-        let newState =restoreState();
+        let newState = restoreState();
         this.setState(newState, () => {
             this.state.tasks.map(t => {
                 if (t.id >= this.newTaskId) {
@@ -26,35 +26,8 @@ class ToDoList extends React.Component {
         })
     }
 
-    // saveState = () => {
-    //     let stateAsString = JSON.stringify(this.state);
-    //     localStorage.setItem('our-state', stateAsString);
-    // }
-    // restoreState = () => {
-    //     let state = {
-    //         tasks: [],
-    //         filterValue: 'All',
-    //     };
-    //     let stateAsString = localStorage.getItem('our-state');
-    //     if (stateAsString != null) {
-    //         state = JSON.parse(stateAsString)
-    //     }
-    //     this.setState(state, () => {
-    //         this.state.tasks.map(t => {
-    //             if (t.id >= this.newTaskId) {
-    //                 this.newTaskId = t.id + 1;
-    //             }
-    //         })
-    //     })
-    // }
-
     state = {
-        tasks: [
-            /*{id: 0, title: 'CSS', isDone: true, priority: 'high'},
-            {id: 1, title: 'JS', isDone: true, priority: 'medium'},
-            {id: 2, title: 'ReactJS', isDone: true, priority: 'high'},
-            {id: 3, title: 'Patterns', isDone: false, priority: 'low'},*/
-        ],
+        tasks: [],
         filterValue: 'All',
     }
     newTaskId = 0;
@@ -73,10 +46,10 @@ class ToDoList extends React.Component {
 
     };
     deleteTask = (taskId) => {
-        let task = this.state.tasks.filter(t => {
+        let updateTask = this.state.tasks.filter(t => {
             return t.id !== taskId
         })
-        this.setState({tasks: task}, () => {
+        this.setState({tasks: updateTask}, () => {
             saveState(this.state)
         })
     }
@@ -103,7 +76,9 @@ class ToDoList extends React.Component {
     changeTitle = (taskId, newTitle) => {
         this.changeTask(taskId, {title: newTitle})
     };
-
+    changePriority = (taskId, newStatus) => {
+        this.changeTask(taskId, {priority: newStatus})
+    }
     render = () => {
 
         return (
@@ -122,6 +97,7 @@ class ToDoList extends React.Component {
                     })}
                                    changeStatus={this.changeStatus}
                                    changeTitle={this.changeTitle}
+                                   changePriority={this.changePriority}
                                    deleteTask={this.deleteTask}/>
                     <TodoListFooter changeFilter={this.changeFilter} filterValue={this.state.filterValue}/>
                 </div>

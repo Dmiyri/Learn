@@ -20,10 +20,14 @@ class TodoListTask extends React.Component {
     onTitleChanged = (e) => {
         this.props.changeTitle(this.props.task.id, e.currentTarget.value);
     };
-
     onDeleteClick = () => {
         this.props.deleteTask(this.props.task.id)
     }
+
+    onPriorityChange = (e) => {
+        this.props.changePriority(this.props.task.id, e.target.value)
+    }
+
     render = (props) => {
 
         let classForChecked = this.props.task.isDone ? "todoList-task done" : "todoList-task";
@@ -39,7 +43,12 @@ class TodoListTask extends React.Component {
                              autoFocus={true}
                              value={this.props.task.title}/>
                     : <span onClick={this.activateEditMode}>{this.props.task.id}-{this.props.task.title} </span>}
-                - priority: {this.props.task.priority}
+                - priority:
+                <select value={this.props.task.priority} onChange={this.onPriorityChange}>
+                    <option value='high'>high</option>
+                    <option value='middle'>middle</option>
+                    <option value='low'>low</option>
+                </select>
                 <button onClick={this.onDeleteClick}>X</button>
             </div>
         );
